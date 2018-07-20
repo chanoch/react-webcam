@@ -1,19 +1,15 @@
 # react-webcam
 
-Webcam component for React. See [this](http://caniuse.com/#feat=stream)
-for browser compatibility.
+Webcam component for React. See the [can I use this feature site](http://caniuse.com/#feat=stream)
+for browser support for media streams in HTML.
 
-Note: Browsers will throw an error if the page is loaded from insecure origin. I.e. Use https.
+Note: Browsers will throw an warning if the page is loaded from insecure origin. i.e. Use https outside of development.
 
 ## Installation
 
 ```
-npm install react-webcam
+npm install @chanoch.com/react-webcam
 ```
-
-## Demo
-
-https://codepen.io/mozmorris/pen/JLZdoP
 
 ## Usage
 
