@@ -120,7 +120,7 @@ export default class Webcam extends Component {
     if (!this.state.hasUserMedia && !Webcam.userMediaRequested) {
       this.requestUserMedia();
     }
-  }
+}
 
   componentWillUpdate(nextProps) {
     if (
@@ -131,6 +131,10 @@ export default class Webcam extends Component {
     ) {
       this.requestUserMedia();
     }
+  }
+
+  componentDidUpdate() {
+      this.video.srcObject = this.stream
   }
 
   componentWillUnmount() {
@@ -285,7 +289,7 @@ export default class Webcam extends Component {
     } catch (error) {
       this.setState({
         hasUserMedia: true,
-        src: window.URL.createObjectURL(stream),
+        src: stream,
       });
     }
 
@@ -298,7 +302,6 @@ export default class Webcam extends Component {
         autoPlay
         width={this.props.width}
         height={this.props.height}
-        src={this.state.src}
         muted={this.props.audio}
         className={this.props.className}
         playsInline
